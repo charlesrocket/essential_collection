@@ -42,7 +42,7 @@ jobs:
       fail-fast: false
       matrix:
         distro:
-          - freebsd13
+          - freebsd14
           - netbsd9
           - openbsd7
 
