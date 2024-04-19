@@ -48,6 +48,13 @@ jobs:
           sphinx-build -M html docs/collections/charlesrocket/essential
           docs/build -c docs -W --keep-going
 
+      - name: Fix docs permissions
+        run: |
+          chmod -c -R +rX "docs/build/html/" | while read line; do
+          echo "::warning \
+          title=Invalid file permissions automatically fixed::$line"
+          done
+
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v3
         with:
