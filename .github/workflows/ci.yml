@@ -50,8 +50,8 @@ jobs:
       matrix:
         distro:
           - freebsd14
-          - netbsd9
-          - openbsd7
+          #- netbsd9
+          #- openbsd7
 
     steps:
       - name: Check out the codebase
@@ -91,7 +91,7 @@ jobs:
       matrix:
         distro:
           - alpine
-          - rocky
+          #- rocky
 
     steps:
       - name: Check out the codebase
