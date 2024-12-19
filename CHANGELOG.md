@@ -2,15 +2,41 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0] - 2024-12-19
+
+### Features
+
+- Support local configs
+
+### Miscellaneous tasks
+
+- Update LICENSE
+- Bump ansible to 2.17
+
+### Operations
+
+- Bump macos
+- Bump fbsd version
+- Update actions
+- Update `labeler` config
+- Fix docs permissions
+- Use macos-12
+- Build the collection
+- Update test distros
+- Switch to ubuntu-latest
+- Configure dependabot
+- Bump actions/deploy-pages from 1 to 4
+- Bump actions/setup-python from 4 to 5
+
+### Testing
+
+- Fix network interfaces
+
 ## [1.3.3] - 2023-12-09
 
 ### Bug Fixes
 
 - Rename internal variables
-
-### CI/CD
-
-- Use `ansible-lint`
 
 ### Miscellaneous tasks
 
@@ -18,18 +44,15 @@ All notable changes to this project will be documented in this file.
 - Bump ansible to 2.15.0
 - Switch ansible to 2.14.0
 
+### Operations
+
+- Use `ansible-lint`
+
 ## [1.3.2] - 2023-12-07
 
 ### Bug Fixes
 
 - Ignore `tempfile` changes
-
-### CI/CD
-
-- Move `docsite`
-- Fix `cd` syntax
-- Rename `docs`
-- Fix `docsite`
 
 ### Documentation
 
@@ -42,6 +65,13 @@ All notable changes to this project will be documented in this file.
 
 - Update `antsibull-docs`
 - Fix linter
+
+### Operations
+
+- Move `docsite`
+- Fix `cd` syntax
+- Rename `docs`
+- Fix `docsite`
 
 ## [1.3.1] - 2023-12-06
 
@@ -71,12 +101,6 @@ All notable changes to this project will be documented in this file.
 
 ## [1.2.5] - 2023-10-03
 
-### CI/CD
-
-- Fix `lint`
-- Update `checkout`
-- Disable fail-fast
-
 ### Documentation
 
 - Fix galaxy badge
@@ -87,6 +111,12 @@ All notable changes to this project will be documented in this file.
 ### Miscellaneous tasks
 
 - Update dev dependencies
+
+### Operations
+
+- Fix `lint`
+- Update `checkout`
+- Disable fail-fast
 
 ### Testing
 
@@ -110,15 +140,15 @@ All notable changes to this project will be documented in this file.
 
 - Use `ansible_user` variable
 
-### CI/CD
-
-- Add pr labeler
-
 ### Miscellaneous tasks
 
 - Add pr template
 - Use `molecule-plugins`
 - Add ansible config
+
+### Operations
+
+- Add pr labeler
 
 ### Testing
 
@@ -130,10 +160,6 @@ All notable changes to this project will be documented in this file.
 
 - Improve error handling
 
-### CI/CD
-
-- Add codecov config
-
 ### Documentation
 
 - Add attributes
@@ -142,6 +168,10 @@ All notable changes to this project will be documented in this file.
 
 - Fix test name
 - Drop `display`
+
+### Operations
+
+- Add codecov config
 
 ### Testing
 
@@ -168,11 +198,6 @@ All notable changes to this project will be documented in this file.
 
 ## [1.2.0] - 2023-04-10
 
-### CI/CD
-
-- Perform integration testing
-- Drop defaults
-
 ### Documentation
 
 - Add codecov
@@ -191,18 +216,16 @@ All notable changes to this project will be documented in this file.
 - Version bump
 - Prepare for 1.2.0
 
+### Operations
+
+- Perform integration testing
+- Drop defaults
+
 ### Testing
 
 - Add integration tests
 
 ## [1.1.0] - 2023-04-02
-
-### CI/CD
-
-- Deploy docsite
-- Move docsite tasks to `release`
-- Don't execute linter during release
-- Add `ansible-test` to release dependencies
 
 ### Documentation
 
@@ -229,6 +252,13 @@ All notable changes to this project will be documented in this file.
 - Update collection tags
 - Update links
 
+### Operations
+
+- Deploy docsite
+- Move docsite tasks to `release`
+- Don't execute linter during release
+- Add `ansible-test` to release dependencies
+
 ### Styling
 
 - Fix formatting
@@ -244,4 +274,5 @@ All notable changes to this project will be documented in this file.
 
 - Add macos
 - Drop macos
+
 
