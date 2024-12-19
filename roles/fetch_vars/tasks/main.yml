@@ -1,19 +1,27 @@
 ---
 
-- name: Prepare temporary files
-  ansible.builtin.tempfile:
-    state: directory
-  register: temp_vars
-  changed_when: false
-  delegate_to: localhost
-
-- name: Fetch remote variables
-  ansible.builtin.uri:
-    url: "{{ fetch_vars_url }}"
-    dest: "{{ temp_vars.path + '/vars.yaml' }}"
-  changed_when: false
-  delegate_to: localhost
-
 - name: Add remote variables
+  when: fetch_vars_url is not regex("^\/")
+  block:
+    - name: Prepare temporary location
+      ansible.builtin.tempfile:
+        state: directory
+      register: temp_vars
+      changed_when: false
+      delegate_to: localhost
+
+    - name: Fetch remote variables
+      ansible.builtin.uri:
+        url: "{{ fetch_vars_url }}"
+        dest: "{{ temp_vars.path + '/vars.yaml' }}"
+      changed_when: false
+      delegate_to: localhost
+
+    - name: Include remote variables
+      ansible.builtin.include_vars:
+        file: "{{ temp_vars.path + '/vars.yaml' }}"
+
+- name: Add local variables
   ansible.builtin.include_vars:
-    file: "{{ temp_vars.path + '/vars.yaml' }}"
+    file: "{{ fetch_vars_url }}"
+  when: fetch_vars_url is regex("^\/")
